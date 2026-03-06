@@ -16,7 +16,7 @@ console = Console()
 err_console = Console(stderr=True)
 
 fetch_cli = "curl -fsSL"
-shell_env = "sh"
+shell_env = "bash"
 
 def _output(data: str | dict | list, as_json: bool, markdown: bool = True) -> None:
     """Print output as JSON or rich markdown/plain text."""
